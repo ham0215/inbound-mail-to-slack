@@ -15,11 +15,11 @@ exports.sendgridWebhook = (req: any, res: any) => {
       chanel: "#sendgrid"
     },
     json: true
-  }
-  rp(options).then(function (repos: any) {
-    console.error(repos);
-  }).error(function (err: any) {
-    console.error(err);
-  })
+    rp(options).then(function (repos: any) {
+      console.error(repos);
+    }).error(function (err: any) {
+      console.error(err);
+    })
   */
+  res.status(200).send('ok');
 };
