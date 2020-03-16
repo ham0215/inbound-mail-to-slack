@@ -5,7 +5,7 @@
  * @param {Object} res Cloud Function response context.
  */
 exports.sendgridWebhook = (req: any, res: any) => {
-  console.log(req);
+  console.log(req.body);
   /**
   const options = {
     uri: process.env.WEBHOOK,
