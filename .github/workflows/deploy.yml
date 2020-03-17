@@ -21,7 +21,7 @@ jobs:
     - name: deploy to cloud functions
       uses: actions-hub/gcloud@282.0.0
       env:
-        PROJECT_ID: default
+        PROJECT_ID: amiable-bridge-235015
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
         args: functions deploy sendgridWebhook --runtime nodejs8 --trigger-http --allow-unauthenticated --source lib
