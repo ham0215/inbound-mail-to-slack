@@ -24,4 +24,4 @@ jobs:
         PROJECT_ID: amiable-bridge-235015
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: functions deploy sendgridWebhook --runtime nodejs8 --trigger-http --allow-unauthenticated --source lib --service-account ${{ secrets.SERVICE_ACCOUNT }}
+        args: functions deploy inbound-mail-to-slack --runtime nodejs8 --trigger-http --allow-unauthenticated --entry-point sendgridWebhook --source lib --service-account ${{ secrets.SERVICE_ACCOUNT }}
