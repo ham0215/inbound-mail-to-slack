@@ -1,25 +1,25 @@
-//import rp = require("request-promise");
+import { WebClient } from '@slack/web-api';
 
 /**
  * @param {Object} req Cloud Function request context.
  * @param {Object} res Cloud Function response context.
  */
 exports.sendgridWebhook = (req: any, res: any) => {
+  console.log('start sendgrid webhook');
   console.log(req.body);
-  /**
-  const options = {
-    uri: process.env.WEBHOOK,
-    method: "POST",
-    body: {
-      text: 'hogehoge',
-      chanel: "#sendgrid"
-    },
-    json: true
-    rp(options).then(function (repos: any) {
-      console.error(repos);
-    }).error(function (err: any) {
-      console.error(err);
-    })
-  */
+
+  const web = new WebClient(process.env.SLACK_TOKEN);
+
+  try {
+    // Use the `chat.postMessage` method to send a message from this app
+    web.chat.postMessage({
+      channel: '#sendgrid',
+      text: `hogehoge`,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  console.log('end sendgrid webhook');
   res.status(200).send('ok');
 };

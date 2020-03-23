@@ -14,8 +14,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "@slack/web-api": "^5.8.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",
